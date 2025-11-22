@@ -11,19 +11,19 @@ Playwright Web &amp; Api Automation framework
 - Added dotenv library and using it for reading login credentials
 
 - Next features to be implemented: 
-    Encryption 
-    Logging
-    Data driven using JSON/CSV/For-loop
-    Faker library for test data 
-    Retry mechanism
-    Cross browser testing
-    CI/CD
-    Serial mode execution
-    Custom fixtures
-    API tests using playwright
-    API monitoring, intercepting, mocking
-    Visual testing
-    Self healing of locators
-    Aqua IDE
+    - Encryption,
+    - Logging,
+    - Data driven using JSON/CSV/For-loop
+    - Faker library for test data 
+    - Retry mechanism
+    - Cross browser testing
+    - CI/CD
+    - Serial mode execution
+    - Custom fixtures
+    - API tests using playwright
+    - API monitoring, intercepting, mocking
+    - Visual testing
+    - Self healing of locators
+    - Aqua IDE
 
 
