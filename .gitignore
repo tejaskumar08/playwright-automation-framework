@@ -6,3 +6,10 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# ignore creds
+#ignore session info
+/config/*
+
+
+config/auth.json
