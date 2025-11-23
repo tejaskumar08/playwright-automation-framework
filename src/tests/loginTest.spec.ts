@@ -37,7 +37,7 @@ test.describe('Login Test Suite', ()=>{
         console.log("User is in home using the saved auth info");
     });
 
-    test.skip('test env file', async()=>{
+    test('test env file', async()=>{
         console.log(process.env.user!);
         console.log(process.env.password!);
     })
