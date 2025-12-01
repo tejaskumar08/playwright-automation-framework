@@ -1,6 +1,6 @@
 import {Page, expect} from '@playwright/test';
 
-export default class 
+export default class LoginPage
  {
     private readonly username =  '#username'
     private readonly password =  '#password'
@@ -25,6 +25,11 @@ export default class
         await this.page.waitForTimeout(10000);
         await this.page.waitForTimeout(10000);
         //await this.page.context().storageState({path: './config/auth.json'});
+    }
+
+    async navigateToHome(){
+        //Without login directly go to home page using stored session info
+        await this.page.goto("https://orgfarm-38abd48598-dev-ed.develop.lightning.force.com/lightning/page/home");
     }
  
     

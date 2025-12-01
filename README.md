@@ -6,11 +6,13 @@ Playwright Web &amp; Api Automation framework
     - To add more...
 
 - Added Page Object Model for framework
-- Added Assetions
+- Added Playwright Assetions
 - Added storageState function to store and use login session info
 - Added dotenv library and using it for reading login credentials
 - Added Node Environment variables 
 - Added Encryption and Decryption, this can be utilized with providing SALT value in NODE environment variable
+- Added API Mocking 
+- Added Custom fixture 
 
 - Next features to be implemented: 
     - Encryption, Decryption - DONE✅ 
@@ -21,9 +23,11 @@ Playwright Web &amp; Api Automation framework
     - Cross browser testing
     - CI/CD
     - Serial mode execution
-    - Custom fixtures
+    - Custom fixtures - DONE✅
     - API tests using playwright
-    - API monitoring, intercepting, mocking
+    - API monitoring
+    - API intercepting 
+    - API mocking - DONE✅
     - Visual testing
     - Self healing of locators
     - Aqua IDE
