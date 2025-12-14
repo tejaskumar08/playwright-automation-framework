@@ -1,12 +1,13 @@
 import {expect, test} from '@playwright/test';
-import LoginPage from '../pages/LoginPage';
-import HomePage from '../pages/HomePage';
+import LoginPage from '../../pages/LoginPage';
+import HomePage from '../../pages/HomePage';
 import * as dotenv from 'dotenv';
 
 const authFile = 'config/auth.json'
 
 test.describe('Login Test Suite', ()=>{
-    test.skip('Login test', async({page})=>{
+
+    test.skip('Login test and save session info to auth file', async({page})=>{
         //creating the new object of login page 
         const loginPage = new LoginPage(page);
 
@@ -25,7 +26,11 @@ test.describe('Login Test Suite', ()=>{
          //Use storageState function to use login session info 
         const context = await browser.newContext({storageState: authFile});
         const page = await context.newPage();
+        const loginPage = new LoginPage(page);
         const homePage = new HomePage(page);
+        
+        //hit the home page url
+        await loginPage.navigateToHome();
         
         //Assertions in home page 
         homePage.verifyServiceIconVisible();
