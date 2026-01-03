@@ -6,7 +6,7 @@ const authFile = 'config/auth.json'
 
 test.describe('Login Test Suite', ()=>{
 
-    test('Login test and save session info to auth file', async({page})=>{
+    test.skip('Login test and save session info to auth file', async({page})=>{
         //creating the new object of login page 
         const loginPage = new LoginPage(page);
 
@@ -21,7 +21,7 @@ test.describe('Login Test Suite', ()=>{
         console.log('Auth info is saved')
     });
 
-    test.skip('Login using saved auth info', async({ browser })=>{
+    test('Login using saved auth info', async({ browser })=>{
          //Use storageState function to use login session info 
         const context = await browser.newContext({storageState: authFile});
         const page = await context.newPage();

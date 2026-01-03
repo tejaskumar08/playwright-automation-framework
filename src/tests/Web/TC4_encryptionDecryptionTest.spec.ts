@@ -1,5 +1,5 @@
 import {test, expect} from '@playwright/test';
-import { decryption, encryption } from '../utils/CryptojsUtils';
+import { decryption, encryption } from '../../utils/CryptojsUtils';
 
 test.describe('Encryption and Decryption Suite', ()=>{
     test('Encryption and Decryption of username', async()=>{
