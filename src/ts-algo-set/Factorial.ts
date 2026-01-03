@@ -8,9 +8,3 @@ function factorial(num:number):number{
     return result;
 }
 console.log("Factorial - ", factorial(5));
-
-
-// TO LEARN 
-// Fibbonaci 
-// count vowels
-// validate paranthesis

@@ -8,6 +8,6 @@ function findDuplicates(arr) {
         else
             nonDupSet.add(num);
     }
-    return dupSet;
+    return nonDupSet;
 }
 console.log(findDuplicates([1, 2, 3, 2, 4, 3, 5]));

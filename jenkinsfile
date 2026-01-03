@@ -1,0 +1,53 @@
+
+pipeline {
+  agent { label 'linux' }                       // or 'any' / a Docker agent
+  options { timeout(time: 60, unit: 'MINUTES') } // hard stop to avoid stuck builds
+  environment {
+    NODE_ENV = 'ci'
+  }
+
+  stages {
+    stage('Checkout') {
+      steps { checkout scm }
+    }
+
+    stage('Setup Node') {
+      steps {
+        // Use Node preinstalled on agent or via NodeJS plugin; else install manually
+        sh 'node --version && npm --version'
+      }
+    }
+
+    stage('Install deps') {
+      steps {
+        sh 'npm ci'                             // clean install using package-lock
+      }
+    }
+
+    stage('Install Playwright browsers') {
+      steps {
+        // Install browsers + Linux deps via CLI (recommended in CI)
+        sh 'npx playwright install --with-deps' // Chromium/Firefox/WebKit
+      }
+    }
+
+    stage('Run tests') {
+      steps {
+        // (Optional) enable JUnit reporter via env or config (see note below)
+        sh 'npx playwright test'
+      }
+      post {
+        always {
+          // Upload Playwright HTML report directory as a build artifact
+          archiveArtifacts artifacts: 'playwright-report/**', fingerprint: true
+        }
+      }
+    }
+  }
+
+  post {
+    success { echo '✅ Playwright tests passed!' }
+    failure { echo '❌ Playwright tests failed. Check console + archived report.' }
+    always  { deleteDir() } // clean workspace
+  }
+}

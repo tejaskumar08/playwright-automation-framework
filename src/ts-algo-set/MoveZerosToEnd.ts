@@ -1,5 +1,5 @@
 function moveZeroEnd(numArray:number[]):number[]{
-    let writeIndex:number =0;
+    let writeIndex:number = 0;
     //// Step 1: move all non-zeros to the front (preserves order)
     for(let i:number =0;i<numArray.length;i++){
         const value = numArray[i];

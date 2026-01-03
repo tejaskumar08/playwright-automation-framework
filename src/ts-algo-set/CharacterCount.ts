@@ -1,7 +1,5 @@
 function characterCount(str:string):Map<string, number>{
 	const map = new Map<string, number>();
-	let i:number = 0;
-	let j:number= str.length-1;
 	for(const character of str){
 		if(map.has(character))
 			map.set(character, map.get(character)+1)

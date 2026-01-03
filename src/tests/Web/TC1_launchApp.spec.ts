@@ -1,8 +1,8 @@
 import {test, expect} from '@playwright/test';
+import HomePage  from '../../pages/HomePage';
+import LoginPage from '../../pages/LoginPage';
 
-test('tc1', async({page})=>{
-    await page.goto('https://login.salesforce.com');
-    await expect(page, 'Could not verify Url').toHaveURL(/login/);
-    await expect(page, 'Could not verify title').toHaveTitle('Login | Salesforce');
-    await expect(page.getByAltText('Salesforce'), 'Logo not visible').toBeVisible();
+test('launch salesforce app', async({page})=>{
+    const loginPage = new LoginPage(page);
+    await loginPage.navigateToApp();
 })

@@ -3,7 +3,7 @@ function secondLargest(numArray:number[]):null|number{
     let secondMax:number = -Infinity;
     for(const num of numArray){
         if(num > max){
-            secondMax = max
+            secondMax = max 
             max = num
         } else if( num < max && num > secondMax)
             secondMax = num

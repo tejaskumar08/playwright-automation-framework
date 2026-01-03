@@ -1,12 +1,12 @@
-function paranthesis(para) {
+function paranthesis(input) {
     var stack = [];
     var match = {
         ')': '(',
         '}': '{',
         ']': '['
     };
-    for (var i = 0; i < para.length; i++) {
-        var char = para[i];
+    for (var i = 0; i < input.length; i++) {
+        var char = input[i];
         var isClosing = char === ')' || char === '}' || char === ']';
         if (isClosing) {
             var top_1 = stack.pop();

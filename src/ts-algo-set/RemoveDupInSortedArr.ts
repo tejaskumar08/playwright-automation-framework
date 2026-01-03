@@ -1,5 +1,3 @@
-import { arrayBuffer } from "stream/consumers";
-
 function removeDupsInArray(numArray:number[]):number[]{
     const map = new Map<number, boolean>();
     const uniqueArr:number[] = [];

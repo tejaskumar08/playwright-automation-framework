@@ -1,12 +1,12 @@
-function paranthesis(para: string):boolean{
+function paranthesis(input: string):boolean{
     const stack:string[] = [];
     const match: Record<string, string> = {
         ')': '(',
         '}': '{',
         ']': '['
     };
-    for(let i=0;i<para.length;i++){
-        const char = para[i];
+    for(let i=0;i<input.length;i++){
+        const char = input[i];
         const isClosing = char === ')' ||char === '}' || char ===']';
 
         if(isClosing){

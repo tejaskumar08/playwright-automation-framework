@@ -8,7 +8,14 @@ import path from 'path';
  */
 // import dotenv from 'dotenv';
 // import path from 'path';
-require('dotenv').config({path: `${__dirname}//config//.env`})
+//require('dotenv').config({path:`${__dirname}//config//.env`})
+
+if(!process.env.NODE_ENV){
+  require('dotenv').config({path:`${__dirname}//config//.env`})
+}else{
+  require('dotenv').config({path:`${__dirname}//config//.env.${process.env.NODE_ENV}`})
+}
+
 
 /**
  * See https://playwright.dev/docs/test-configuration.
