@@ -22,8 +22,8 @@ export default class LoginPage
         await this.page.locator(this.username).fill(user);
         await this.page.fill(this.password, pass);
         await this.page.click(this.loginBtn);
-        await this.page.waitForTimeout(10000);
-        await this.page.waitForTimeout(10000);
+        await this.page.waitForLoadState('networkidle');
+        await this.page.waitForLoadState('domcontentloaded');
         //await this.page.context().storageState({path: './config/auth.json'});
     }
 

@@ -7,8 +7,9 @@ function paranthesis(input) {
     };
     for (var i = 0; i < input.length; i++) {
         var char = input[i];
-        var isClosing = char === ')' || char === '}' || char === ']';
-        if (isClosing) {
+        //const isClosing = char === ')' ||char === '}' || char ===']';
+        var isClosing = [')', '}', ']'];
+        if (isClosing.includes(char)) {
             var top_1 = stack.pop();
             var expected = match[char];
             if (top_1 !== expected)

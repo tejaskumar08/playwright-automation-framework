@@ -10,4 +10,5 @@ node_modules/
 # ignore creds
 #ignore session info
 /config/.env
+/config/.env.qa
 /config/auth.json

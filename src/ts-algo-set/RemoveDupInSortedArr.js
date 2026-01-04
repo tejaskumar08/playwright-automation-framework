@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 function removeDupsInArray(numArray) {
     var map = new Map();
     var uniqueArr = [];

@@ -1,12 +1,25 @@
 function findDuplicates(arr:number[]):Set<number>{
-    const nonDupSet = new Set<number>();
+    const uniqueSet = new Set<number>();
     const dupSet = new Set<number>();
     for(const num of arr){
-        if(nonDupSet.has(num))
-            dupSet.add(num)
+        if(dupSet.has(num))
+            uniqueSet.add(num)
         else
-            nonDupSet.add(num)
+            dupSet.add(num)
     }
-    return nonDupSet;
+    return uniqueSet;
 }
-console.log(findDuplicates([1,2,3,2,4,3,5]));
+console.log(findDuplicates([1,1,2,3,2,4,3,5,5]));
+
+/*-------------------------------------------------*/
+
+
+function removeDulpicateElements(arr:number[]):Set<number>{
+	const uniqueSet = new Set<number>();
+	for(const num of arr){
+		if(!(uniqueSet.has(num)))
+            uniqueSet.add(num)
+	}
+	return uniqueSet;
+}
+console.log(removeDulpicateElements([1,1,2,3,2,4,3,5,5]));

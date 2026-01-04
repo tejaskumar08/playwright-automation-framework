@@ -13,11 +13,11 @@ function anagramString(str1:string, str2:string): boolean{
 }
 
 
-function isAnagramApproach2(s: string, t: string): boolean {
+function isAnagramApproach2(s1: string, s2: string): boolean {
   const count: { [key: string]: number } = {};
 
-  // Count the frequency of characters in string s
-  for (const char of s) {
+  // Count the frequency of characters in string s1
+  for (const char of s1) {
     if (count[char]) {
       count[char]++;
     } else {
@@ -25,8 +25,8 @@ function isAnagramApproach2(s: string, t: string): boolean {
     }
   }
 
-  // Decrement the frequency of characters in string t
-  for (const char of t) {
+  // Decrement the frequency of characters in string s2
+  for (const char of s2) {
     if (count[char]) {
       count[char]--;
     } else {

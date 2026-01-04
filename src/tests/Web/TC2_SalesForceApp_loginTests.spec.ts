@@ -36,4 +36,9 @@ test.describe('Login Test Suite', ()=>{
         
         console.log("User is in home using the saved auth info");
     });
+
+    test('Waits in PW', async({page})=>{
+        
+
+    })
 });

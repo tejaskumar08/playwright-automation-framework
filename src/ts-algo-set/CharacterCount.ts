@@ -10,5 +10,43 @@ function characterCount(str:string):Map<string, number>{
 	return map;
 	//return [...map.entries()]
 }
-
 console.log('character Count - ',characterCount('tejaskumark'));
+
+/*-------------------------------------------------------------*/
+
+function countAlphabetsOnly(str: string) : number{
+	let counter:number =0;
+	for(const char of str){
+		if(char>='a' && char<='z' || char>='A' && char<= 'Z'){
+			counter++;
+		}
+	}
+	return counter;
+}
+console.log('only count character- ',countAlphabetsOnly('tejas12kumark34'));
+
+/*-------------------------------------------------------------*/
+
+function countOnlyNumbers (str: string) : number{
+	let counter:number =0;
+	for(const char of str){
+		if(!(char>='a' && char<='z' || char>='A' && char<= 'Z')){
+			counter++;
+		}
+	}
+	return counter;
+}
+console.log('only count numbers- ',countOnlyNumbers('tejas12kumark34'));
+
+/*-------------------------------------------------------------*/
+
+function countVowels(str: string) : number{
+	let counter:number =0;
+	for(const char of str.toLowerCase()){
+		if(char=='a' || char =='e' || char=='i' || char== 'o' || char =='u'){
+			counter++;
+		}
+	}
+	return counter;
+}
+console.log('only vowels - ',countVowels('THEREare16Donuts'));

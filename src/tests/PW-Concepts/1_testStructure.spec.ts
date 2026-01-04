@@ -8,12 +8,12 @@ test.beforeEach('This is before each', ()=>{
     console.log('This is before each')
 })
 
-test.describe('This is test block', ()=>{
-    test('TC1', async({page})=>{
+test.describe('This is test suite', ()=>{
+    test('this is TC1', async({page})=>{
         await page.goto('https://practice.expandtesting.com/')
     })
 
-    test("TC2", async({page})=>{
+    test("this is TC2", async({page})=>{
         await page.goto('https://practice.expandtesting.com/');
     })
 })
