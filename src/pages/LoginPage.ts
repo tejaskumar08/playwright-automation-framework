@@ -1,4 +1,5 @@
 import {Page, expect} from '@playwright/test';
+import {PWUtils} from '../utils/PlaywrightUtils';
 
 export default class LoginPage
  {
@@ -19,7 +20,7 @@ export default class LoginPage
     }
 
     async loginToApp(user:string, pass:string){
-        await this.page.locator(this.username).fill(user);
+        await this.page.locator(this.username).fill(user);  //PWUtils.enterInputData(this.username, user, 5000);
         await this.page.fill(this.password, pass);
         await this.page.click(this.loginBtn);
         await this.page.waitForLoadState('networkidle');

@@ -12,3 +12,4 @@ node_modules/
 /config/.env
 /config/.env.qa
 /config/auth.json
+/app.log

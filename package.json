@@ -15,6 +15,7 @@
   "dependencies": {
     "crypto-js": "^4.2.0",
     "dotenv": "^17.2.3",
+    "log4js": "^6.9.1",
     "winston": "^3.18.3"
   }
 }
