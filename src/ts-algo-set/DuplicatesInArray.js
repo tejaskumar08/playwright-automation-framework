@@ -10,7 +10,7 @@ function findDuplicates(arr) {
     }
     return uniqueSet;
 }
-console.log(findDuplicates([1, 1, 2, 3, 2, 4, 3, 5, 5]));
+console.log('Only duplicate elements -', findDuplicates([1, 1, 2, 3, 2, 4, 3, 5, 5]));
 /*-------------------------------------------------*/
 function removeDulpicateElements(arr) {
     var uniqueSet = new Set();
@@ -21,17 +21,4 @@ function removeDulpicateElements(arr) {
     }
     return uniqueSet;
 }
-console.log(removeDulpicateElements([1, 1, 2, 3, 2, 4, 3, 5, 5]));
-function findOnlyUniqueElements(arr) {
-    var dupSet = new Set();
-    var uniqueSet = new Set();
-    for (var _i = 0, arr_3 = arr; _i < arr_3.length; _i++) {
-        var num = arr_3[_i];
-        if (!(uniqueSet.has(num)))
-            uniqueSet.add(num);
-        else
-            dupSet.add(num);
-    }
-    return dupSet;
-}
-console.log(findOnlyUniqueElements([1, 1, 2, 3, 2, 4, 3, 5, 5]));
+console.log('removed duplicates elements - ', removeDulpicateElements([1, 1, 2, 3, 2, 4, 3, 5, 5]));

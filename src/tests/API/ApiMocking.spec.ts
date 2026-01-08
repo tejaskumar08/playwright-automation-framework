@@ -24,4 +24,20 @@ test.describe('API Mocking suite', ()=>{
         await page.goto('https://demo.playwright.dev/api-mocking')
         await expect(page.getByText('Custard', {exact:true})).toBeVisible();
     });
+
+    test("API monitoring", async({page, request})=>{
+        const targetUrl = /\/configmgr\/v1\/configurations\//;
+        
+        await page.on("request", (request)=>{
+            if(targetUrl.test(request.url()))
+            console.log('headers', request.headers)
+            console.log('request', request.method, request.postData, request.url)
+        })
+
+        await page.on("response", (response)=>{
+            console.log('response status', response.status)
+            console.log('response body', response.body, response.json, response.text)
+        })
+
+    })
 })

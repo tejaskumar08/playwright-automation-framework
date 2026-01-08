@@ -40,7 +40,7 @@ console.log('only count numbers- ',countOnlyNumbers('tejas12kumark34'));
 
 /*-------------------------------------------------------------*/
 
-function countVowels(str: string) : number{
+function countOnlyVowels(str: string) : number{
 	let counter:number =0;
 	for(const char of str.toLowerCase()){
 		if(char=='a' || char =='e' || char=='i' || char== 'o' || char =='u'){
@@ -49,4 +49,4 @@ function countVowels(str: string) : number{
 	}
 	return counter;
 }
-console.log('only vowels - ',countVowels('THEREare16Donuts'));
+console.log('only vowels - ',countOnlyVowels('THEREare16Donuts'));

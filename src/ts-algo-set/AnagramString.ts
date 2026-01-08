@@ -14,35 +14,25 @@ function anagramString(str1:string, str2:string): boolean{
 
 
 function isAnagramApproach2(s1: string, s2: string): boolean {
-  const count: { [key: string]: number } = {};
+  const cleanS1 = s1.replace(/[^a-z0-9]/gi, '').toLowerCase();
+  const cleanS2 = s2.replace(/[^a-z0-9]/gi, '').toLowerCase();
+
+  const charMap = new Map<string, number>();
 
   // Count the frequency of characters in string s1
   for (const char of s1) {
-    if (count[char]) {
-      count[char]++;
-    } else {
-      count[char] = 1;
-    }
+    charMap.set(char, (charMap.get(char) || 0) + 1);
   }
 
   // Decrement the frequency of characters in string s2
   for (const char of s2) {
-    if (count[char]) {
-      count[char]--;
-    } else {
-      count[char] = -1;
-    }
-  }
-
-  // Check if any character has non-zero frequency
-  for (const val of Object.values(count)) {
-    if (val !== 0) {
-      return false;
-    }
+    const count = charMap.get(char);
+    charMap.set(char, count - 1)
   }
 
   return true;
 }
 
 console.log('Anagram - ', anagramString('tejas', 'jaste'));
+console.log('Anagram - ', anagramString('testing', 'testcase'));
 console.log('Anagram - ', isAnagramApproach2('tejas', 'jaste'));

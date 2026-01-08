@@ -1,13 +1,13 @@
 function fibonacciSeries(num) {
     if (num <= 1)
         return 1;
-    var prev = 0;
-    var curr = 1;
+    var a = 0;
+    var b = 1;
     for (var i = 2; i <= num; i++) {
-        var next = prev + curr;
-        prev = curr;
-        curr = next;
+        var next = a + b;
+        a = b;
+        b = next;
     }
-    return curr;
+    return b;
 }
 console.log('fibonacci - ', fibonacciSeries(10));

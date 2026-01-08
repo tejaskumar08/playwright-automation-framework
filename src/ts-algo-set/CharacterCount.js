@@ -35,7 +35,8 @@ function countOnlyNumbers(str) {
     return counter;
 }
 console.log('only count numbers- ', countOnlyNumbers('tejas12kumark34'));
-function countVowels(str) {
+/*-------------------------------------------------------------*/
+function countOnlyVowels(str) {
     var counter = 0;
     for (var _i = 0, _a = str.toLowerCase(); _i < _a.length; _i++) {
         var char = _a[_i];
@@ -45,4 +46,4 @@ function countVowels(str) {
     }
     return counter;
 }
-console.log('only vowels - ', countVowels('THEREare16Donuts'));
+console.log('only vowels - ', countOnlyVowels('THEREare16Donuts'));

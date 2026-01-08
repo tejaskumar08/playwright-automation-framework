@@ -9,7 +9,7 @@ function findDuplicates(arr:number[]):Set<number>{
     }
     return uniqueSet;
 }
-console.log(findDuplicates([1,1,2,3,2,4,3,5,5]));
+console.log('Only duplicate elements -',findDuplicates([1,1,2,3,2,4,3,5,5]));
 
 /*-------------------------------------------------*/
 
@@ -22,4 +22,4 @@ function removeDulpicateElements(arr:number[]):Set<number>{
 	}
 	return uniqueSet;
 }
-console.log(removeDulpicateElements([1,1,2,3,2,4,3,5,5]));
+console.log('removed duplicates elements - ',removeDulpicateElements([1,1,2,3,2,4,3,5,5]));

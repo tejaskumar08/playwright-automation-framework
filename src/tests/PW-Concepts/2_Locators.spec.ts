@@ -17,7 +17,6 @@ test.describe('This is test block', ()=>{
         await page.waitForLoadState('networkidle');
         await page.locator('#login').waitFor({state: 'attached', timeout : 5000});
         expect(await page.locator('#login')).toBeVisible({timeout:5000})
-        
         //Test code 
         // await page.press('#profile','Tab')
         // expect.poll(async() =>{
