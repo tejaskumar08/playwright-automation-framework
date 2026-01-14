@@ -23,4 +23,40 @@ test.describe('This is test block', ()=>{
         //   await page.locator('#loadingIcon');
         // }).
     })
+
+    test("Waits", async({page})=>{
+        //waitFor method
+        await page.locator('#username').waitFor({state:"attached"});
+        await page.locator('#username').waitFor({state: "detached"});
+        await page.locator('#username').waitFor({state:"visible"});
+        await page.locator('#username').waitFor({state:"hidden"});
+
+        //waitForLoadState function
+        await page.waitForLoadState('domcontentloaded');
+        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('load');
+
+        //waitForRequest function
+        await page.waitForRequest("https://key.manager.com/api/na/configmgr/configurationtemplates");
+        await page.waitForRequest((request)=> 
+        request.url() ==="https://test.key.com/api/na/configmgr/byteAddress");
+
+        //waitForResponse function
+        const responsePromise = await page.waitForResponse('https://test.key.com/api/na/configmgr/permissions');
+        const resposnePromise = await page.waitForResponse(response => 
+            response.status() === 200 &&
+            response.request().method() === 'GET'
+        )
+        const response = await responsePromise;
+        
+        //waitForSelector function
+        await page.waitForSelector('Setup/Keys');
+
+        //waitForTimeout function - NOT RECOMMENDED TO USE 
+        await page.waitForTimeout(5000);
+
+        //waitForURL function
+        await page.waitForURL('https://key.manager.com/ConfigurationManager/create-configuration');
+        
+    })
 })

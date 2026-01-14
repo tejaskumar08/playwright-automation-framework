@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 
-test.describe('API Mocking suite', ()=>{
+test.describe('API Mocking, Monitoring and Intercepting', ()=>{
 
     test('Mocking Request', async({page}) =>{
         await page.route('*/**/api/v1/fruits', async (route)=>{
@@ -36,8 +36,18 @@ test.describe('API Mocking suite', ()=>{
 
         await page.on("response", (response)=>{
             console.log('response status', response.status)
-            console.log('response body', response.body, response.json, response.text)
+            console.log('response body', response.body, response.json, response.text, response.headers)
         })
 
+        await page.on("console", (msg)=>{
+            console.log('logs --', msg.text())
+        })
+
+        await page.on("dialog", (dialog)=> {
+            console.log('accept --', dialog.accept())
+            console.log('dismiss --', dialog.dismiss())
+            console.log('message --', dialog.message())
+            console.log('type of dialog  --', dialog.type());
+        })
     })
 })
