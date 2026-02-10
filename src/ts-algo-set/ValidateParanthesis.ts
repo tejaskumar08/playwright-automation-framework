@@ -12,7 +12,6 @@ function paranthesis(input: string):boolean{
         if(isClosing.includes(char)){
             const top = stack.pop();
             const expected = match[char];
-
             if(top!==expected)
                 return false;
         } else {

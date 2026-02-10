@@ -22,9 +22,9 @@ function isAnagramApproach2(s1, s2) {
     for (var _a = 0, s2_1 = s2; _a < s2_1.length; _a++) {
         var char = s2_1[_a];
         var count = charMap.get(char);
-        charMap.set(char, count - 1);
+        charMap.set(char, count ? -1 : 1);
     }
-    return true;
+    return charMap.size === 0;
 }
 console.log('Anagram - ', anagramString('tejas', 'jaste'));
 console.log('Anagram - ', anagramString('testing', 'testcase'));

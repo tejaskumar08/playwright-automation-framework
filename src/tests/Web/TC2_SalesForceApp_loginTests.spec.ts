@@ -18,10 +18,11 @@ test.describe('Login Test Suite', ()=>{
         
         //Use storageState function to store login session info 
         await page.context().storageState({path: authFile})
+        await page.waitForTimeout(30000);
         console.log('Auth info is saved')
     });
 
-    test.skip('Login using saved auth info', async({ browser })=>{
+    test('Login using saved auth info', async({ browser })=>{
          //Use storageState function to use login session info 
         const context = await browser.newContext({storageState: authFile});
         const page = await context.newPage();

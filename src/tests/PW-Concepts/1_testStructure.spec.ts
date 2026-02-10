@@ -12,10 +12,10 @@ test.describe('This is test suite', ()=>{
     test('this is TC1', async({page})=>{
         await page.goto('https://practice.expandtesting.com/')
     })
-
+ 
     test("this is TC2", async({page})=>{
         await page.goto('https://practice.expandtesting.com/');
-    })
+    })    
 })
 
 test.afterEach('This is after each',()=>{

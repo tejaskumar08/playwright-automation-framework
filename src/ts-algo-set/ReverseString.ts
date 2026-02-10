@@ -19,19 +19,18 @@
 
 
 function reverseString(str:string):string{
-	const chars = str.split('')
+	const charArr = str.split('')
 	let i=0;
 	let j = str.length;
-	let chr:any =0;;
+	let temp:any =0;;
 	while(i<j){
-		chr = chars[i];
-		chars[i] = chars[j];
-		chars[j] = chr;
+		temp = charArr[i];
+		charArr[i] = charArr[j];
+		charArr[j] = temp;
 		i++;
 		j--;
 	}
-	
-	return chars.join('');
+	return charArr.join('');
 }
 
 console.log('reverse --', reverseString('typescript'));

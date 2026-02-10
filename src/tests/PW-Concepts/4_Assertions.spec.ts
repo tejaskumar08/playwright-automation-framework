@@ -26,7 +26,7 @@ test.describe('This is test block', ()=>{
         expect(await page.getByText("sign out")).toHaveAccessibleErrorMessage('sign up is mandatory')
         expect(await page.getByText("sign out")).toHaveAccessibleName('All user sign up')
         expect(await page.getByText("sign out")).toHaveAttribute('enabled')
-        expect(await page.getByText("sign out")).toHaveCSS('warning-color', '#ffdb5f')
+        expect(await page.getByText("sign out")).toHaveCSS('warning-color', '#e9b90a')
         expect(await page.getByText("sign out")).toHaveClass('form-submit-button');
         expect(await page.getByText("sign out")).toHaveCount(3);
         expect(await page.getByText("sign out")).toHaveId('username-required');

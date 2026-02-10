@@ -3,7 +3,7 @@ function characterCount(str) {
     for (var _i = 0, str_1 = str; _i < str_1.length; _i++) {
         var character = str_1[_i];
         if (map.has(character))
-            map.set(character, map.get(character) + 1);
+            map.set(character, (map.get(character)) ? +1 : 1);
         else
             map.set(character, 1);
     }

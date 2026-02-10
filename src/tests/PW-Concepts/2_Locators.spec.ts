@@ -39,7 +39,7 @@ test.describe('This is test block', ()=>{
         //waitForRequest function
         await page.waitForRequest("https://key.manager.com/api/na/configmgr/configurationtemplates");
         await page.waitForRequest((request)=> 
-        request.url() ==="https://test.key.com/api/na/configmgr/byteAddress");
+        request.url() ==="https://test.key.com/api/na/configmgr/byteAddress" && request.method() === 'GET');
 
         //waitForResponse function
         const responsePromise = await page.waitForResponse('https://test.key.com/api/na/configmgr/permissions');
@@ -57,6 +57,25 @@ test.describe('This is test block', ()=>{
 
         //waitForURL function
         await page.waitForURL('https://key.manager.com/ConfigurationManager/create-configuration');
-        
+    })
+
+    test('Page.on methods', async({page})=>{
+        await page.on('dialog', dialog=>{ 
+            dialog.accept, 
+            dialog.dismiss, 
+            dialog.message, 
+            dialog.type()
+        })
+
+        await page.on('request', request=>{
+            const url = request.url();
+            const body = request.postData();
+        })
+    })
+
+    test('Page method actions', async({page})=>{
+        await page.check('#checkbox or radioBtn'); 
+        await page.mouse.click(200, 200);
+
     })
 })
