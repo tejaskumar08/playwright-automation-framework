@@ -2,7 +2,8 @@ var CryptoJS = require("crypto-js");
 var fs = require("fs");
 var path = require("path");
 
-export function encryption(textToEncrypt:any){
+
+export async function encryption(textToEncrypt:any){
     var cipherUsername = CryptoJS.AES.encrypt(textToEncrypt, process.env.SALT).toString();
     console.log("Encrypted text -",cipherUsername);
     return cipherUsername;
