@@ -33,7 +33,6 @@ jobs:
       - name: Run TC7_sauceDemo test
         run: |
           npx playwright test src/tests/Web/TC7_sauceDemo.spec.ts || echo "Test case failed. Check logs for details."
-          npx playwright show-report
 
       - name: Upload Playwright Report
         if: always()
