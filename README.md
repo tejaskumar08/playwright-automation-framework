@@ -52,6 +52,8 @@
 1. Clone the repository.
 2. Install dependencies:
    ```bash
+   npm init playwright@latest
+   npx playwright install
    npm ci
    ```
 3. Run tests:
@@ -59,7 +61,9 @@
    npx playwright test
    ```
 4. View reports in the `playwright-report` directory.
-
+   ```bash
+   npx playwright show-report
+   ```
 ---
 
 ## 🎨 **Why Choose This Framework?**
