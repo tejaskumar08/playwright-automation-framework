@@ -1,0 +1,8 @@
+{
+ "copilot.mcpServers": {
+  "playwright": {
+    "command": "npm run mcp-server",
+    "args": []
+  } 
+}   
+}
