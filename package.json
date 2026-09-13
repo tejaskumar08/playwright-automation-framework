@@ -8,14 +8,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.58.2",
+    "@playwright/test": "^1.63.0",
     "@types/crypto-js": "^4.2.2",
-    "@types/node": "^24.10.1"
+    "@types/node": "^24.10.1",
+    "dotenv": "^17.4.2"
   },
   "dependencies": {
     "@playwright/mcp": "^0.0.68",
     "crypto-js": "^4.2.0",
-    "dotenv": "^17.2.3",
     "log4js": "^6.9.1",
     "winston": "^3.18.3"
   }

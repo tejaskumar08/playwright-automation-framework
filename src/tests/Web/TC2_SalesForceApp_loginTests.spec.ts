@@ -18,7 +18,7 @@ test.describe('Login Test Suite', ()=>{
         
         //Use storageState function to store login session info 
         await page.context().storageState({path: authFile})
-        await page.waitForTimeout(30000);
+        await page.waitForTimeout(10000);
         console.log('Auth info is saved')
     });
 
@@ -33,13 +33,8 @@ test.describe('Login Test Suite', ()=>{
         await loginPage.navigateToHome();
         
         //Assertions in home page 
-        homePage.verifyServiceIconVisible();
+        homePage.verifyUserInfoVisible();
         
         console.log("User is in home using the saved auth info");
     });
-
-    test('Waits in PW', async({page})=>{
-        
-
-    })
 });

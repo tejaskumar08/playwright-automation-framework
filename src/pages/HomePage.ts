@@ -2,17 +2,16 @@ import {Page, expect} from '@playwright/test'
 
 export default class HomePage {
    
-     private readonly serviceIcon = 'Service'
-     private readonly accountsIcon = 'Accounts'
+     private readonly profileIcon = "img[class='oxd-userdropdown-img']"
      private readonly accountListBtn = 'Accounts List'
      private readonly newAccountBtn = 'New Account'
 
     constructor(private page: Page){
     }
     
-    async verifyServiceIconVisible(){
-         await expect(await this.page.getByTitle(this.serviceIcon)).toBeVisible({timeout:5000});
-         await expect(await this.page.getByRole("link", {name: this.accountsIcon})).toBeVisible();
+    async verifyUserInfoVisible(){
+         await expect(this.page.locator(this.profileIcon)).toBeVisible({timeout:5000});
+         await expect(this.page.getByText("My Actions")).toBeVisible();
     }
 
     async createNewAccount(){

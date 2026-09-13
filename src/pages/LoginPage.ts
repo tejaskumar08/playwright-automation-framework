@@ -1,19 +1,19 @@
 import {Page, expect} from '@playwright/test';
-import {PWUtils} from '../utils/PlaywrightUtils';
 import {LoginPageLocators} from '../locators/loginPageLocators'
 
 export default class LoginPage
- {
+{
     constructor(private page: Page){
     }
 
     async navigateToApp(){
-        await this.page.goto('https://login.salesforce.com/');
+        //replacing salesforce app with orange hrm 
+        await this.page.goto('https://opensource-demo.orangehrmlive.com/');
         await this.page.waitForLoadState('domcontentloaded');
         await this.page.waitForLoadState('networkidle');
-        await expect(this.page, "verify Url").toHaveURL('https://login.salesforce.com/');
-        await expect(this.page, 'verify title').toHaveTitle('Login | Salesforce');
-        await expect(this.page.getByAltText('Salesforce'), 'Verify Logo').toBeVisible();
+        await expect(this.page, "verify Url").toHaveURL('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+        await expect(this.page, 'verify title').toHaveTitle('OrangeHRM');
+        await expect(this.page.locator("//img[@alt='company-branding']"), 'Verify Logo').toBeVisible();
     }
 
     async loginToApp(user:string, pass:string){
@@ -27,7 +27,9 @@ export default class LoginPage
 
     async navigateToHome(){
         //Without login directly go to home page using stored session info
-        await this.page.goto("https://orgfarm-38abd48598-dev-ed.develop.lightning.force.com/lightning/page/home", {timeout:30000});
+        await this.page.goto("https://opensource-demo.orangehrmlive.com/", {timeout:30000});
+        await this.page.waitForLoadState('networkidle');
+        await this.page.waitForLoadState('domcontentloaded');
     }
  
     
