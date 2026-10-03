@@ -1,6 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
-import path from 'path';
 
 /**
  * Read environment variables from file.
@@ -10,10 +9,12 @@ import path from 'path';
 // import path from 'path';
 //require('dotenv').config({path:`${__dirname}//config//.env`})
 
+const path = require('path');
+
 if(!process.env.NODE_ENV){
-  require('dotenv').config({path:`${__dirname}//config//.env`})
+  require('dotenv').config({ path: path.resolve(__dirname, 'config', '.env') });
 }else{
-  require('dotenv').config({path:`${__dirname}//config//.env.${process.env.NODE_ENV}`})
+  require('dotenv').config({ path: path.resolve(__dirname, 'config', `.env.${process.env.NODE_ENV}`) });
 }
 
 

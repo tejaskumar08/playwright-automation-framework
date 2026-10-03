@@ -1,6 +1,7 @@
 import {expect, test} from '@playwright/test';
 import LoginPage from '../../pages/LoginPage';
 import HomePage from '../../pages/HomePage';
+import * as dotenv from 'dotenv';
 
 const authFile = 'config/auth.json'
 
